@@ -16,5 +16,5 @@ doc = {
         }
       }
 
-res = es.search(index='kibana_sample_data_flights', body=doc)
-print(res)
+# res = es.search(index='kibana_sample_data_flights', body=doc)
+# print(res)
