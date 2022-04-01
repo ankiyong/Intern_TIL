@@ -17,5 +17,21 @@ import pprint
 # df = pd.json_normalize(info)
 
 
-df = pd.read_csv('C:/Users/pop24/Desktop/source_code/python/movie.csv',engine='python',sep=',',quotechar='"',error_bad_lines=False)
-print(df.columns)
+# df = pd.read_csv('C:/Users/pop24/Desktop/source_code/python/movie.csv',engine='python',sep=',',quotechar='"',error_bad_lines=False)
+# print(df.columns)
+
+
+def divide(x, y):
+    try:
+        result = x / y
+    except ZeroDivisionError:
+        print("0으로 나눌 수 없어요!")
+        return False
+    else:
+        print("결과:", result)
+        return True
+    finally:
+        print("나누기 연산을 종료합니다.")
+
+
+divide(4,2)
