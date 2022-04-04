@@ -29,19 +29,15 @@ def get_links(i):
 
 
 def get_info(html):
-    try:
-        content = html.find("div",{"id":"cMain"}).select("#harmonyContainer > section > p:nth-child(2)")
-        title = html.find("div",{"id":"cSub"}).find("h3",{"class" : "tit_view"}).text
-        date = html.find("div",{"id":"cSub"}).find("span",{"class" : "num_date"}).text
-        section = html.find("ul",{"class" : "gnb_comm"}).get_attribute_list('data-category').text
-    except:
-        pass
-    finally:
-        return {
-            "title" : title,
-            "section" : section,
-            "date" : date,
-            "content" : content
+    content = html.find("div",{"id":"cMain"}).select("#harmonyContainer > section > p:nth-child(2)")
+    title = html.find("div",{"id":"cSub"}).find("h3",{"class" : "tit_view"}).text
+    date = html.find("div",{"id":"cSub"}).find("span",{"class" : "num_date"}).text
+    section = html.find("ul",{"class" : "gnb_comm"}).get_attribute_list('data-category').text
+    return {
+        "title" : title,
+        "section" : section,
+        "date" : date,
+        "content" : content
         }
 
 def get_news(link):
@@ -56,18 +52,20 @@ def get_news(link):
 
 
 
-link = get_links(3)
-print(get_news(link))
+# link = get_links(3)
+# print(get_news(link))
 
-# def get_text(i):
-#     content = []
-#     link = get_links(i)
-#     for url in link:
-#         res = requests.get(url)
-#         soup = BeautifulSoup(res.text,'html.parser').find("div",{"id":"cMain"}).select("#harmonyContainer > section > p:nth-child(2)")
-#         for c in soup:
-#             content.append(c.text)
-#     return content
+def get_text(i):
+    content = []
+    link = get_links(i)
+    for url in link:
+        res = requests.get(url)
+        soup = BeautifulSoup(res.text,'html.parser').find("div",{"id":"cMain"}).select("#harmonyContainer > section > p:nth-child(2)")
+        for c in soup:
+            content.append(c.text)
+    return content
+
+print(get_text(2))
             
 # def get_title(i):
 #     title = []
