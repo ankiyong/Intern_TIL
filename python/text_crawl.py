@@ -65,7 +65,8 @@ def get_text(i):
             content.append(c.text)
     return content
 
-print(get_text(2))
+print(get_text(10))
+
             
 # def get_title(i):
 #     title = []
