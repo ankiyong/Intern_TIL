@@ -20,8 +20,10 @@ POST _reindex
 POST _aliases
 {
 	"actions" : [
-		{"add" : {"index" : "my_index1","alias" : "alias_name"}},
-		{"add" : {"index" : "my_info","alias" : "alias_name"}}
+		{"add" : {"index" : "my_index1",
+                  "alias" : "alias_name"}},
+		{"add" : {"index" : "my_info",
+                  "alias" : "alias_name"}}
 	]
 }
 ```
@@ -42,8 +44,10 @@ alias 설정은 index를 다시 만드는 경우에 많이 활용된다. data는
 POST _aliases
 {
 	"actions" : [
-		{"remove" : {"index" : "삭제할index","alias" : "alias_name"}},
-		{"add" : {"index" : "새로운index","alias" : "alias_name"}}
+		{"remove" : {"index" : "삭제할index",
+                     "alias" : "alias_name"}},
+		{"add" : {"index" : "새로운index",
+                  "alias" : "alias_name"}}
 		
 	]
 }
